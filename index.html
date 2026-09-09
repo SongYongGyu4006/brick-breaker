@@ -215,12 +215,9 @@
             }
 
             collisionDetection();
-            
-            // Update score display
-            scoreElement.textContent = score;
 
             if (!gameOver && !gameClear) {
-                requestAnimationFrame(update);
+                requestAnimationFrame(draw); // <-- 변경된 부분: update -> draw
             } else if (gameClear) {
                 ctx.font = '48px Arial';
                 ctx.fillStyle = '#fff';
@@ -243,7 +240,7 @@
             drawBall();
 
             if (!gameOver && !gameClear) {
-                requestAnimationFrame(update);
+                requestAnimationFrame(update); // <-- 변경되지 않음
             }
         }
 
