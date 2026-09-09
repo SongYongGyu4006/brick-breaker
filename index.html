@@ -134,6 +134,9 @@
                             brick.status = 0;
                             score += 10;
 
+                            // Update score display
+                            scoreElement.textContent = score;
+
                             // Check if all bricks are destroyed
                             let allDestroyed = true;
                             for (let c = 0; c < brickColumns; c++) {
